@@ -4,7 +4,7 @@
 #
 Name     : R-desc
 Version  : 1.1.0
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/desc_1.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/desc_1.1.0.tar.gz
 Summary  : Manipulate DESCRIPTION Files
@@ -33,11 +33,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1493917674
+export SOURCE_DATE_EPOCH=1493918025
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1493917674
+export SOURCE_DATE_EPOCH=1493918025
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
