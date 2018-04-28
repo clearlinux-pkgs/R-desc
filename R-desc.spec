@@ -4,7 +4,7 @@
 #
 Name     : R-desc
 Version  : 1.1.1
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/desc_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/desc_1.1.1.tar.gz
 Summary  : Manipulate DESCRIPTION Files
