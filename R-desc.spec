@@ -4,15 +4,13 @@
 #
 Name     : R-desc
 Version  : 1.1.1
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/desc_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/desc_1.1.1.tar.gz
 Summary  : Manipulate DESCRIPTION Files
 Group    : Development/Tools
 License  : MIT
-Requires: R-assertthat
 Requires: R-rprojroot
-BuildRequires : R-assertthat
 BuildRequires : R-rprojroot
 BuildRequires : clr-R-helpers
 
@@ -27,11 +25,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523299877
+export SOURCE_DATE_EPOCH=1525287825
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523299877
+export SOURCE_DATE_EPOCH=1525287825
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
