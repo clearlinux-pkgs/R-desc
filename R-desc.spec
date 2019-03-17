@@ -4,18 +4,32 @@
 #
 Name     : R-desc
 Version  : 1.2.0
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/desc_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/desc_1.2.0.tar.gz
 Summary  : Manipulate DESCRIPTION Files
 Group    : Development/Tools
 License  : MIT
+Requires: R-assertthat
+Requires: R-backports
+Requires: R-cli
 Requires: R-rprojroot
+Requires: R-withr
+BuildRequires : R-assertthat
+BuildRequires : R-backports
+BuildRequires : R-cli
 BuildRequires : R-rprojroot
-BuildRequires : clr-R-helpers
+BuildRequires : R-withr
+BuildRequires : buildreq-R
 
 %description
-It is intended for packages that create or manipulate other packages.
+# desc
+> Parse DESCRIPTION files
+[![Linux Build Status](https://travis-ci.org/r-lib/desc.svg?branch=master)](https://travis-ci.org/r-lib/desc)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/r-lib/desc?svg=true)](https://ci.appveyor.com/project/gaborcsardi/desc)
+[![](http://www.r-pkg.org/badges/version/desc)](http://www.r-pkg.org/pkg/desc)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/desc)](http://www.r-pkg.org/pkg/desc)
+[![Coverage Status](https://img.shields.io/codecov/c/github/r-lib/desc/master.svg)](https://codecov.io/github/r-lib/desc?branch=master)
 
 %prep
 %setup -q -c -n desc
@@ -25,11 +39,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1525293590
+export SOURCE_DATE_EPOCH=1552831847
 
 %install
+export SOURCE_DATE_EPOCH=1552831847
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1525293590
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,8 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library desc|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || : || :
+R CMD check --no-manual --no-examples --no-codoc  desc || :
 
 
 %files
@@ -94,3 +107,47 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || : || :
 /usr/lib64/R/library/desc/help/paths.rds
 /usr/lib64/R/library/desc/html/00Index.html
 /usr/lib64/R/library/desc/html/R.css
+/usr/lib64/R/library/desc/tests/testthat.R
+/usr/lib64/R/library/desc/tests/testthat/D1
+/usr/lib64/R/library/desc/tests/testthat/D2
+/usr/lib64/R/library/desc/tests/testthat/D3
+/usr/lib64/R/library/desc/tests/testthat/D4
+/usr/lib64/R/library/desc/tests/testthat/D5
+/usr/lib64/R/library/desc/tests/testthat/D6
+/usr/lib64/R/library/desc/tests/testthat/D7
+/usr/lib64/R/library/desc/tests/testthat/D8
+/usr/lib64/R/library/desc/tests/testthat/files/DESCRIPTION
+/usr/lib64/R/library/desc/tests/testthat/fixtures/notpkg_1.0.tar.gz
+/usr/lib64/R/library/desc/tests/testthat/fixtures/pkg_1.0.0.tar.gz
+/usr/lib64/R/library/desc/tests/testthat/fixtures/pkg_1.0.0.tgz
+/usr/lib64/R/library/desc/tests/testthat/fixtures/pkg_1.0.0.zip
+/usr/lib64/R/library/desc/tests/testthat/fixtures/pkg_1.0.0_R_x86_64-pc-linux-gnu.tar.gz
+/usr/lib64/R/library/desc/tests/testthat/fixtures/xxx.gz
+/usr/lib64/R/library/desc/tests/testthat/fixtures/xxx.tar.gz
+/usr/lib64/R/library/desc/tests/testthat/fixtures/xxx.zip
+/usr/lib64/R/library/desc/tests/testthat/helper.R
+/usr/lib64/R/library/desc/tests/testthat/output/to_latex.tex
+/usr/lib64/R/library/desc/tests/testthat/test-archives.R
+/usr/lib64/R/library/desc/tests/testthat/test-assertions.R
+/usr/lib64/R/library/desc/tests/testthat/test-authors.R
+/usr/lib64/R/library/desc/tests/testthat/test-built.R
+/usr/lib64/R/library/desc/tests/testthat/test-checks.R
+/usr/lib64/R/library/desc/tests/testthat/test-collate.R
+/usr/lib64/R/library/desc/tests/testthat/test-create.R
+/usr/lib64/R/library/desc/tests/testthat/test-deps.R
+/usr/lib64/R/library/desc/tests/testthat/test-desc.R
+/usr/lib64/R/library/desc/tests/testthat/test-encoding.R
+/usr/lib64/R/library/desc/tests/testthat/test-idempotent.R
+/usr/lib64/R/library/desc/tests/testthat/test-non-oo.R
+/usr/lib64/R/library/desc/tests/testthat/test-queries.R
+/usr/lib64/R/library/desc/tests/testthat/test-read.R
+/usr/lib64/R/library/desc/tests/testthat/test-remotes.R
+/usr/lib64/R/library/desc/tests/testthat/test-repair.R
+/usr/lib64/R/library/desc/tests/testthat/test-str.R
+/usr/lib64/R/library/desc/tests/testthat/test-to_latex.R
+/usr/lib64/R/library/desc/tests/testthat/test-trailing-ws.R
+/usr/lib64/R/library/desc/tests/testthat/test-urls.R
+/usr/lib64/R/library/desc/tests/testthat/test-utils.R
+/usr/lib64/R/library/desc/tests/testthat/test-validation.R
+/usr/lib64/R/library/desc/tests/testthat/test-versions.R
+/usr/lib64/R/library/desc/tests/testthat/test-write.R
