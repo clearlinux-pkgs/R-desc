@@ -4,17 +4,12 @@
 #
 Name     : R-desc
 Version  : 1.2.0
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/desc_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/desc_1.2.0.tar.gz
 Summary  : Manipulate DESCRIPTION Files
 Group    : Development/Tools
 License  : MIT
-Requires: R-assertthat
-Requires: R-backports
-Requires: R-cli
-Requires: R-rprojroot
-Requires: R-withr
 BuildRequires : R-assertthat
 BuildRequires : R-backports
 BuildRequires : R-cli
@@ -39,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552831847
+export SOURCE_DATE_EPOCH=1552835970
 
 %install
-export SOURCE_DATE_EPOCH=1552831847
+export SOURCE_DATE_EPOCH=1552835970
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
