@@ -4,4 +4,5 @@ R-pkgbuild
 R-pkgdown
 R-pkgload
 R-rcmdcheck
+R-roxygen2
 R-usethis
