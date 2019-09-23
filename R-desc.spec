@@ -4,27 +4,24 @@
 #
 Name     : R-desc
 Version  : 1.2.0
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/desc_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/desc_1.2.0.tar.gz
 Summary  : Manipulate DESCRIPTION Files
 Group    : Development/Tools
 License  : MIT
+Requires: R-R6
+Requires: R-assertthat
+Requires: R-crayon
+Requires: R-rprojroot
+BuildRequires : R-R6
 BuildRequires : R-assertthat
-BuildRequires : R-backports
-BuildRequires : R-cli
+BuildRequires : R-crayon
 BuildRequires : R-rprojroot
-BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
-# desc
-> Parse DESCRIPTION files
-[![Linux Build Status](https://travis-ci.org/r-lib/desc.svg?branch=master)](https://travis-ci.org/r-lib/desc)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/r-lib/desc?svg=true)](https://ci.appveyor.com/project/gaborcsardi/desc)
-[![](http://www.r-pkg.org/badges/version/desc)](http://www.r-pkg.org/pkg/desc)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/desc)](http://www.r-pkg.org/pkg/desc)
-[![Coverage Status](https://img.shields.io/codecov/c/github/r-lib/desc/master.svg)](https://codecov.io/github/r-lib/desc?branch=master)
+It is intended for packages that create or manipulate other packages.
 
 %prep
 %setup -q -c -n desc
@@ -33,13 +30,13 @@ BuildRequires : buildreq-R
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552905498
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569282852
 
 %install
-export SOURCE_DATE_EPOCH=1552905498
+export SOURCE_DATE_EPOCH=1569282852
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -68,12 +65,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  desc || :
+R CMD check --no-manual --no-examples --no-codoc desc || :
 
 
 %files

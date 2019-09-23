@@ -1,8 +1,11 @@
 # This file contains recursive sources that require this package
 R-DBItest
+R-RSQLite
 R-pkgbuild
 R-pkgdown
 R-pkgload
 R-rcmdcheck
+R-rhub
 R-roxygen2
+R-rstantools
 R-usethis
