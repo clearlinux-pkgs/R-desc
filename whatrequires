@@ -10,4 +10,5 @@ R-rcmdcheck
 R-rhub
 R-roxygen2
 R-rstantools
+R-testthat
 R-usethis
